@@ -3,11 +3,11 @@
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
-  "scripts": {
-    "test": "cypress run  --headless --reporter mochawesome",
-    "start": "webpack-dev-server --mode development --watch --open --hot --port=3000",
-    "build": "webpack --mode production"
-  },
+"scripts": {
+  "test": "cross-env NODE_OPTIONS=--openssl-legacy-provider cypress run  --headless --reporter mochawesome",
+  "start": "cross-env NODE_OPTIONS=--openssl-legacy-provider webpack-dev-server --mode development --watch --open --hot --port=3000",
+  "build": "cross-env NODE_OPTIONS=--openssl-legacy-provider webpack --mode production"
+},
   "keywords": [],
   "author": "",
   "license": "ISC",
@@ -38,6 +38,7 @@
     "babel-loader": "^8.1.0",
     "babel-preset-env": "^1.7.0",
     "babel-preset-react": "^6.24.1",
+    "cross-env": "^7.0.3",
     "css-loader": "^4.3.0",
     "file-loader": "6.2.0",
     "html-webpack-plugin": "^4.5.0",
